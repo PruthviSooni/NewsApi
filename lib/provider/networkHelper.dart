@@ -11,8 +11,7 @@ class NetworkHelper {
   static String bbc = '$baseUrl?domains=bbc.co.uk&apiKey=${APIKey.key}';
   static String espn = '$baseUrl?domains=espn.com&apiKey=${APIKey.key}';
   static String foxnews = '$baseUrl?domains=foxnews.com&apiKey=${APIKey.key}';
-  static String hackernews =
-      '$baseUrl?domains=ycombinator.com&apiKey=${APIKey.key}';
+  static String timeNews = '$baseUrl?domains=time.com&apiKey=${APIKey.key}';
 
   static getTheHinduNews() async {
     Map data;
@@ -58,9 +57,9 @@ class NetworkHelper {
     }
   }
 
-  static getHackerNews() async {
+  static getTimeNews() async {
     Map data;
-    http.Response response = await http.get(hackernews);
+    http.Response response = await http.get(timeNews);
     if (response.statusCode == 200) {
       data = jsonDecode(response.body);
       return data;
