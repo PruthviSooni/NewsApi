@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/configs/tabList.dart';
-import 'package:flutter_app/provider/networkHelper.dart';
+import 'package:flutter_app/services/networkHelper.dart';
 import 'package:flutter_app/widgets/newsChannels.dart';
 
 class App extends StatefulWidget {
@@ -50,8 +50,22 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('News App'),
+        actions: [
+          IconButton(
+              tooltip: 'Refresh',
+              icon: Icon(Icons.refresh),
+              onPressed: () {
+                setState(() {
+                  fetchData();
+                });
+              }),
+        ],
+        title: Text(
+          'News App',
+          style: TextStyle(color: Colors.black),
+        ),
         bottom: TabBar(
+          indicatorColor: Colors.black,
           controller: _tabController,
           isScrollable: true,
           tabs: tabs.map<Widget>((tabs) {

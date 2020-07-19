@@ -33,8 +33,6 @@ class _DetailState extends State<Detail> {
         children: [
           WebView(
             initialUrl: widget.url,
-            javascriptMode: JavascriptMode.unrestricted,
-            gestureNavigationEnabled: true,
             onWebViewCreated: (WebViewController webController) {
               _completer.complete(webController);
             },

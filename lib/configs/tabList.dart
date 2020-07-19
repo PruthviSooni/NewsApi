@@ -9,5 +9,5 @@ List<Tabs> tabs = [
   Tabs(title: 'The Hindu'),
   Tabs(title: 'ESPN'),
   Tabs(title: 'Fox News'),
-  Tabs(title: 'Hacker News'),
+  Tabs(title: 'Time News'),
 ];

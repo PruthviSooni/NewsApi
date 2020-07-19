@@ -11,6 +11,7 @@ class Main extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light().copyWith(
         primaryColor: Colors.deepOrange,
+        accentColor: Colors.deepOrange,
         textTheme: TextTheme(
           body1: Theme.of(context).textTheme.body1.apply(color: Colors.black),
         ),

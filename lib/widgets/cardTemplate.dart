@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class CardTemplate extends StatelessWidget {
@@ -36,11 +37,23 @@ class CardTemplate extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.only(top: 5, left: 5),
+              margin: EdgeInsets.only(top: 5, left: 5, right: 5),
               child: Text(
                 articles[index]['title'],
                 softWrap: true,
-                style: TextStyle(fontSize: 18.0),
+                textAlign: TextAlign.left,
+                style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 5, left: 5, right: 5),
+              child: Text(
+                articles[index]['description'],
+                softWrap: true,
+                overflow: TextOverflow.ellipsis,
+                maxLines: 2,
+                textAlign: TextAlign.left,
+                style: TextStyle(fontSize: 14.0),
               ),
             ),
             Container(
