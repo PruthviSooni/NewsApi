@@ -28,12 +28,12 @@ class _AppState extends State<App> with SingleTickerProviderStateMixin {
   List ch1, ch2, ch3, ch4, ch5, ch6;
 
   fetchData() async {
-    data1 = await NetworkHelper.getBBCNews();
-    data2 = await NetworkHelper.getTheHinduNews();
-    data3 = await NetworkHelper.getESPNNews();
-    data4 = await NetworkHelper.getTOFNews();
-    data5 = await NetworkHelper.getFoxNews();
-    data6 = await NetworkHelper.getTimeNews();
+    data1 = await NetworkHelper.getNews(NetworkHelper.bbc);
+    data2 = await NetworkHelper.getNews(NetworkHelper.timesofindia);
+    data3 = await NetworkHelper.getNews(NetworkHelper.theHindu);
+    data4 = await NetworkHelper.getNews(NetworkHelper.espn);
+    data5 = await NetworkHelper.getNews(NetworkHelper.foxnews);
+    data6 = await NetworkHelper.getNews(NetworkHelper.timeNews);
     if (mounted) {
       setState(() {
         ch1 = data1['articles'];
